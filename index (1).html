@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Tukaram Shelake | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a, .contact-info span {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            color: var(--secondary);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--surface);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.15rem;
+        }
+
+        .job-company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .job-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .job-desc {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .job-desc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .project-card {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-role {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .edu-row:last-child {
+            border-bottom: none;
+        }
+
+        .edu-title {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .edu-details {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .edu-score {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-card {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cert-card i {
+            color: #eab308;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: var(--secondary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 4rem 1rem 3rem; }
+            section { padding: 1.5rem; }
+            .job-header { flex-direction: column; }
+            .job-date { margin-top: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Saurabh Tukaram Shelake</h1>
+            <p>Power BI Analyst & Data Analyst</p>
+            <div class="contact-info">
+                <a href="mailto:saurabhshelake26@gmail.com"><i class="fas fa-envelope"></i> saurabhshelake26@gmail.com</a>
+                <a href="tel:+919146888036"><i class="fas fa-phone"></i> +91 9146888036</a>
+                <a href="https://www.linkedin.com/in/saurabh-shelake-02254424b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <span><i class="fas fa-map-marker-alt"></i> Kalyan West, Thane, MH</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I hold a bachelor’s degree in electrical engineering and have hands-on experience working with Siemens MTS (Machine Tool Systems). My expertise spans testing, data analytics, and operational tracking. I specialize in transforming raw data into actionable insights through interactive dashboards, advanced data modeling, and reporting automation.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="grid">
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Data Modeling</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Data Cleansing</span>
+                        <span class="tag">KPI Dashboards</span>
+                        <span class="tag">EDA</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Spreadsheets & Databases</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Advanced Excel</span>
+                        <span class="tag">Power Query</span>
+                        <span class="tag">Power Pivot</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">T-SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Strengths</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Office 365</span>
+                        <span class="tag">Sharepoint</span>
+                        <span class="tag">Teamwork</span>
+                        <span class="tag">Adaptability</span>
+                        <span class="tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Order Management Executive</span> | 
+                        <span class="job-company">Siemens Pvt Ltd</span>
+                    </div>
+                    <span class="job-date">Sep 2023 – Present (2 Years 6 Mos)</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Maintain and consolidate enterprise data gathered from disparate sources using Excel.</li>
+                    <li>Update and refresh analytical dashboards on a daily basis for real-time operational visibility.</li>
+                    <li>Design, automate, and construct scalable Excel workflow sheets to drastically reduce manual overhead.</li>
+                    <li>Formulate monthly summary reports and structure customer Service Level Agreements (SLAs).</li>
+                    <li>Provide technical data support directly to order management, sales, and operations business units.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Logistic Assistant</span> | 
+                        <span class="job-company">Siemens Pvt Ltd</span>
+                    </div>
+                    <span class="job-date">Jan 2022 – Aug 2022 (8 Mos)</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Maintained supply chain and logistics operational datasets within environment sheets.</li>
+                    <li>Created systemic monthly executive reports to trace baseline deliverables.</li>
+                    <li>Automated internal pipeline tasks via lookup architecture and advanced functions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="grid">
+                <div class="project-card">
+                    <h3>Data Center Tracking System</h3>
+                    <div class="project-role">Excel Designer / Analyst</div>
+                    <p>Designed and deployed an integrated workbook solution to organize and store complex infrastructure project records for an active data center. Fully automated daily labor computations, milestone progress trackers, and performance metrics—greatly decreasing processing latency and pipeline errors.</p>
+                </div>
+                <div class="project-card">
+                    <h3>IoT Based Health Monitoring System</h3>
+                    <div class="project-role">Academic Lead</div>
+                    <p>Co-developed a cost-effective, low-power hardware and network architecture explicitly built to monitor vital telemetry signals reliably and accurately.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="edu-row">
+                <div>
+                    <div class="edu-title">Bachelor’s Degree in Electrical Engineering (B.E)</div>
+                    <div class="edu-details">ARMIET | Graduated 2021</div>
+                </div>
+                <div class="edu-score">72.65%</div>
+            </div>
+            <div class="edu-row">
+                <div>
+                    <div class="edu-title">Diploma in Electrical Engineering</div>
+                    <div class="edu-details">Government Polytechnic Vikramgad | Graduated 2017</div>
+                </div>
+                <div class="edu-score">69.15%</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card"><i class="fas fa-certificate"></i> Introduction to SQL (Simplilearn)</div>
+                <div class="cert-card"><i class="fas fa-certificate"></i> Power BI for Beginners (Simplilearn)</div>
+                <div class="cert-card"><i class="fas fa-certificate"></i> Power BI Data Modelling Basics (Simplilearn)</div>
+                <div class="cert-card"><i class="fas fa-certificate"></i> Data Visualisation - Tata Forage</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Saurabh Tukaram Shelake. Built for GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
